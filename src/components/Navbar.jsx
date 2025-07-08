@@ -4,13 +4,13 @@ import '../styles/Navbar.css';
 
 function Navbar(){
 	return(
-		<nav>
-			<img src={logo} />
-			<Link className="link" to="/home">Home</Link>
-			<Link className="link" to="/QuienesSomos">Quienes Somos</Link>
-			<Link className="link" to="/Productos">Productos</Link>
-			<Link className="link" to="/Contacto">Contacto</Link>
-		</nav>
+		<div className="nav">
+			<img className="logo" src={logo} />
+			<Link className="link" to="/tp7Catalogo/">Home</Link>
+			<Link className="link" to="/tp7Catalogo/QuienesSomos">Quienes Somos</Link>
+			<Link className="link" to="/tp7Catalogo/Productos">Productos</Link>
+			<Link className="link" to="/tp7Catalogo/Contacto">Contacto</Link>
+		</div>
 	);
 }
 

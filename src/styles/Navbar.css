@@ -1,6 +1,11 @@
 .nav{
-	justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
 .link{
 	margin: 2%;
+}
+.logo{
+	width: 8%;
 }

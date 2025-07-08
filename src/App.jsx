@@ -8,7 +8,7 @@ function App() {
     <>
 	  <BrowserRouter>
 		<Routes>
-	  		<Route path="/" element={<Layout />} />
+	  		<Route path="/tp7Catalogo/" element={<Layout />} />
 	  	</Routes>
 	  </BrowserRouter>
     </>
