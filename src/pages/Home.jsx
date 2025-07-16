@@ -1,13 +1,18 @@
 import '../styles/Home.css';
+import thumbsUp from '/tp7Catalogo/src/assets/thumbsUp.jpg';
 
 function Home() {
 	return(
-		<>
-			<h1>This a home</h1>
-			<p>Hola y bienvenido a <del>Cookie Clicker</del> Productos Inc., la empresa que te vende productos productivos para producir productividad</p>
-			<p>No tengo ganas de seguir escribriendo este texto que seguro nadie va a leer asi </p>
-			<p></p>
-		</>
+		<div className="">
+			<h1 className="containerCenter">This your  home</h1>
+			<div className="textField">
+				<p className="containerCenter">Hola y bienvenido a Productos Inc., la empresa que te vende productos productivos para producir productividad</p>
+				<p className="containerCenter">Aqui nos especializamos en proveerte de los productos de mejor calidad en el mercado al menor precio posible</p>
+			</div>
+			<div className="containerCenter">
+				<img className="imgThumbsUp" src={thumbsUp} />
+			</div>
+		</div>
 	)
 }
 

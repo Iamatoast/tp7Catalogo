@@ -2,7 +2,7 @@
 function Contacto() {
 	return(
 		<>
-			<p>Contactenos mediante señales de humo</p>
+			<p className="textField">Contactenos mediante señales de humo</p>
 		</>
 	)
 }
