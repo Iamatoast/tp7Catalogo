@@ -1,5 +1,5 @@
 import '../styles/Home.css';
-import thumbsUp from '/tp7Catalogo/src/assets/thumbsUp.jpg';
+import thumbsUp from '../assets/thumbsUp.jpg';
 
 function Home() {
 	return(
