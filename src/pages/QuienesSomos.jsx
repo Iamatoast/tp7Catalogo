@@ -1,4 +1,4 @@
-                      xmport Script from '../components/script.jsx';
+import Script from '../components/Script.jsx';
 import '../styles/QuienesSomos.css';
 import logo from '../assets/cookie.png';
 import thumbsUp from '../assets/thumbsUp.jpg';

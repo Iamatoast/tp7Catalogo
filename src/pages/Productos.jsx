@@ -8,9 +8,9 @@ function Producto() {
 		.then(response => (setProductos(response.data)));
 	});
 	return(
-		<>
+		<div className="row containerCenter">
 			{productos.map(obj => (
-				<div key={obj.id} className="card" style={width: 18rem;}>
+				<div key={obj.id} className="card" style={{ width: '18rem' }}>
 				  <img src={obj.image} className="card-img-top" />
 				  <div className="card-body">
 				    <h5 className="card-title">{obj.title}</h5>
@@ -20,7 +20,7 @@ function Producto() {
 				  </div>
 				</div>
 			))}
-		</>
+		</div>
 	)
 }
 
