@@ -18,7 +18,7 @@ function Navbar(){
 			<Link className="link" to="/tp7Catalogo/quienes-somos">Quienes Somos</Link>
 			<Link className="link" to="/tp7Catalogo/productos">Productos</Link>
 			<Link className="link" to="/tp7Catalogo/contacto">Contacto</Link>
-            <Button className="cartButton" ref={target} onClick={() => setShow(!show)}>
+            <Button variant="link" className="cartButton" ref={target} onClick={() => setShow(!show)}>
                 <img className="cart" src={cart} />
             </Button>
             <Overlay target={target.current} show={show} placement="bottom">

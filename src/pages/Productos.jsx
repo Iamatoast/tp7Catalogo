@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 
 function Producto() {
 	const [productos, setProductos] = useState([]);
@@ -8,7 +9,7 @@ function Producto() {
 		.then(response => (setProductos(response.data)));
 	});
 	return(
-		<div className="row containerCenter">
+		<div className="row containerCenter product">
 			{productos.map(obj => (
 				<div key={obj.id} className="card" style={{ width: '18rem' }}>
 				  <img src={obj.image} className="card-img-top" />
@@ -17,6 +18,7 @@ function Producto() {
 				    <p className="card-text">{obj.description}</p>
 				    <p className="card-text">{obj.price}</p>
 				    <p className="card-text">{obj.category}</p>
+                    <Button variant="dark">Comprar</Button>
 				  </div>
 				</div>
 			))}
