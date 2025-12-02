@@ -15,7 +15,7 @@ function QuienesSomos() {
 			</div>
 			<p className="description">Fuimos fundados por dos locos en un garage con demasiada soberbia y demasiada plata asi que nunca tuvimos origenes humildes (el garage tenia 17 tipos de autos distintos)</p>
 			<p className="description">Se supone que tengo que seguir escribiendo esto para llenar la pagina pero no tengo ganas asi que aca tenes todo el guion de Bee movie en su lugar</p>
-			<Script />
+			<Script introText={"Ah sh**, here we go again"}/>
 		</>
 	)
 }

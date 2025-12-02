@@ -1,8 +1,10 @@
 import '../styles/Script.css';
+import PropTypes from "prop-types";
 
-function Script(){
+function Script({ introText }){
 	return(
 		<div className="script">
+			<p>{introText}</p>
 			<p>According to all known laws of aviation, there is no way a bee should be able to fly.</p>
 			<p>Its wings are too small to get its fat little body off the ground.</p>
 			<p>The bee, of course, flies anyway because bees don't care what humans think is impossible.</p>
@@ -1369,5 +1371,9 @@ function Script(){
 		</div>
 	)
 }
+
+Script.propTypes = {
+	introText: PropTypes.string.isRequired,
+};
 
 export default Script

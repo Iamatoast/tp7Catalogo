@@ -2,7 +2,7 @@ import logo from '../assets/cookie.png';
 import cart from '../assets/shopping-cart.png';
 import { Link } from "react-router-dom";
 import '../styles/Navbar.css';
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay';
 import Tooltip from 'react-bootstrap/Tooltip';

@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import { CarritoContext } from '../context/CartContext.jsx';
+import { Link } from "react-router-dom";
 
 function Producto() {
 	const [productos, setProductos] = useState([]);
@@ -28,11 +29,12 @@ function Producto() {
 				    <p className="card-text">{obj.description}</p>
 				    <p className="card-text">${obj.price}</p>
 				    <Button variant="dark" onClick={() => Comprar(obj)}>Comprar</Button>
+				    <Link className="link" to={`/tp7Catalogo/productoDetalle/${obj.id}`}>Ver Mas</Link>
 				  </div>
 				</div>
 			))}
 		</div>
-	)
+	);
 }
 
 export default Producto

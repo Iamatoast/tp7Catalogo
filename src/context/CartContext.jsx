@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
 export const CarritoContext = createContext();
 
@@ -57,6 +58,10 @@ const CarritoProvider = (props) => {
 			{props.children}
 		</CarritoContext.Provider>
 	);
+}
+
+CarritoProvider.propTypes = {
+	props: PropTypes.element,
 }
 
 export default CarritoProvider;

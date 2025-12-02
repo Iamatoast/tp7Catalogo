@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import QuienesSomos from './pages/QuienesSomos.jsx';
 import Productos from './pages/Productos.jsx';
 import Contacto from './pages/Contacto.jsx';
+import ProductoDetalle from './pages/ProductoDetalle.jsx';
 import CarritoProvider from './context/CartContext.jsx';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 					<Route path="/tp7Catalogo/quienes-somos" element={<QuienesSomos />} />
 					<Route path="/tp7Catalogo/productos" element={<Productos />} />
 					<Route path="/tp7Catalogo/contacto" element={<Contacto />} />
+					<Route path="/tp7Catalogo/productoDetalle/:id" element={<ProductoDetalle />} />
 					<Route path="*" element={<h1>404</h1>} />
 				</Route>
 			</Routes>
