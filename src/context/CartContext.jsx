@@ -61,7 +61,7 @@ const CarritoProvider = (props) => {
 }
 
 CarritoProvider.propTypes = {
-	props: PropTypes.element,
+	props: PropTypes.element.isRequired,
 }
 
 export default CarritoProvider;
