@@ -3,7 +3,11 @@ import React, { createContext, useState } from "react";
 export const CarritoContext = createContext();
 
 const CarritoProvider = (props) => {
-	const [carrito, useCarrito] = useState([]);
+	const [carrito, carritoState] = useState(JSON.parse(localStorage.getItem("cart") || []));
+	const useCarrito = (newCarrito) =>{
+		carritoState(newCarrito);
+		localStorage.setItem("cart", JSON.stringify(newCarrito));
+	}
 	const addToCart = (obj) => {
 		let found = false;
 		let newCarrito = [...carrito];
