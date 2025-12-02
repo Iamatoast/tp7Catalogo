@@ -1,19 +1,51 @@
 import { useEffect, useState, useContext } from "react";
-import { CarritoContext } from '../context/CartContext.jsx';
+import { CarritoContext } from '../context/CartContext.js';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-import PropTypes from 'prop-types'
+
+interface Producto {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+}
+interface Objeto{
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+  amount: number;
+}
+interface CarritoContextType {
+	addToCart: (obj: Objeto) => void,
+}
 
 function ProductoDetalle() {
-	const [producto, setProducto] = useState([]);
-    const { id } = useParams();
-	const { addToCart } = useContext(CarritoContext);
-	useEffect(() => {
-		axios.get(`https://fakestoreapi.com/products/${id}`)
-		.then(response => (setProducto(response.data)));
+	const [producto, setProducto] = useState<Producto>({
+		id: 1,
+		title: "a",
+		description: "a",
+		price: 0,
+		image: "NaN",
 	});
-	const Comprar = (obj) =>{
+    const { id } = useParams();
+	const context = useContext(CarritoContext);
+  
+	if (!context) {
+		throw new Error('CarritoContext no esta disponible.');
+	}
+
+	const { addToCart } = context;
+
+
+	useEffect(() => {
+		axios.get<Producto>(`https://fakestoreapi.com/products/${id}`)
+		.then(response => setProducto(response.data));
+	},[]);
+	const Comprar = (obj: Producto) =>{
 		let newObj = 
 		{
 			...obj,

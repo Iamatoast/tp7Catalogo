@@ -1,7 +1,12 @@
 import '../styles/Script.css';
 import PropTypes from "prop-types";
+import {FC} from 'react';
 
-function Script({ introText }){
+interface ScriptProps{
+	introText: string;
+};
+
+const Script: FC<ScriptProps> = ({ introText }) =>{
 	return(
 		<div className="script">
 			<p>{introText}</p>

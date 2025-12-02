@@ -1,15 +1,31 @@
-import React, { createContext, useState } from "react";
-import PropTypes from "prop-types";
+import React, { createContext, useState, FC, ReactNode } from "react";
 
-export const CarritoContext = createContext();
+interface Objeto{
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  image: string;
+  amount: number;
+}
 
-const CarritoProvider = (props) => {
-	const [carrito, carritoState] = useState(JSON.parse(localStorage.getItem("cart") || []));
-	const useCarrito = (newCarrito) =>{
+interface CarritoContextType {
+	carrito: Objeto[],
+	addToCart: (obj: Objeto) => void,
+	removeFromCart: (id: number) => void,
+	clearCart: () => void,
+	getTotal: () => number;
+}
+
+export const CarritoContext = createContext<CarritoContextType | undefined>(undefined);
+
+const CarritoProvider: FC<{children: ReactNode}> = ({ children }) => {
+	const [carrito, carritoState] = useState<Objeto[]>(JSON.parse(localStorage.getItem("cart") || ""));
+	const useCarrito = (newCarrito: Objeto[]) =>{
 		carritoState(newCarrito);
 		localStorage.setItem("cart", JSON.stringify(newCarrito));
 	}
-	const addToCart = (obj) => {
+	const addToCart = (obj: Objeto) => {
 		let found = false;
 		let newCarrito = [...carrito];
 		let i = 0;
@@ -23,7 +39,7 @@ const CarritoProvider = (props) => {
 		if(!found) newCarrito.push(obj);
 		useCarrito(newCarrito);
 	}
-	const removeFromCart = (id) => {
+	const removeFromCart = (id : number) => {
 		let newCarrito = [...carrito];
 		let found = false;
 		let i = 0;
@@ -55,13 +71,9 @@ const CarritoProvider = (props) => {
 				getTotal,
 			}}
 		>
-			{props.children}
+			{children}
 		</CarritoContext.Provider>
 	);
-}
-
-CarritoProvider.propTypes = {
-	props: PropTypes.element.isRequired,
 }
 
 export default CarritoProvider;

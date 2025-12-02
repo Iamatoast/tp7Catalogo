@@ -1,4 +1,4 @@
-import Script from '../components/Script.jsx';
+import Script from '../components/Script.js';
 import '../styles/QuienesSomos.css';
 import logo from '../assets/cookie.png';
 import thumbsUp from '../assets/thumbsUp.jpg';

@@ -6,7 +6,7 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay';
 import Tooltip from 'react-bootstrap/Tooltip';
-import CartWidget from './CartWidget.jsx';
+import CartWidget from './CartWidget.js';
 
 function Navbar(){
     const [show, setShow] = useState(false);
